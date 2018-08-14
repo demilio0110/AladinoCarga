@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="nombre">nombre</string>
+    <string name="aceptar">enviar</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "979281085582",
+    "firebase_url": "https://appnegocios-374e2.firebaseio.com",
+    "project_id": "appnegocios-374e2",
+    "storage_bucket": "appnegocios-374e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979281085582:android:3afec2b8a3e914d3",
+        "android_client_info": {
+          "package_name": "com.example.demilio.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979281085582-97tu0ecj8tt7v5g35q00a4m0cop4heqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.demilio.myapplication",
+            "certificate_hash": "63d7b5aa363cf73ec50e24f8a5f55c4a5351de36"
+          }
+        },
+        {
+          "client_id": "979281085582-8ui9r5dupbkok6s4hegb3b45fliihkte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEUErxcPJlXyxT5p16IUN4s25Z4RSkDlY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979281085582-8ui9r5dupbkok6s4hegb3b45fliihkte.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
