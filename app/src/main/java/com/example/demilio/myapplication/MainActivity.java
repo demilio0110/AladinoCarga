@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnAceptar;
     private EditText txtNombre;
 
-    private static final int PICK_IMAGE = 100;
-    Uri imageUri;
+    private static final int GALLERY_INTENT = 1;
+
     ImageView foto_gallery;
 
     @Override
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
+        mStorage = FirebaseStorage.getInstance().getReference();
 
         txtNombre = (EditText)findViewById(R.id.txtNombre);
         btnAceptar = (Button)findViewById(R.id.btnAceptar);
@@ -77,16 +79,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openGallery(){
-        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, PICK_IMAGE);
+        Intent intent = new Intent(Intent.ACTION_PICK); //, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        intent.setType("image/*");
+        startActivityForResult(intent, GALLERY_INTENT);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK && requestCode == PICK_IMAGE){
-            imageUri = data.getData();
+        if(resultCode == RESULT_OK && requestCode == GALLERY_INTENT){
+            Uri imageUri = data.getData();
             foto_gallery.setImageURI(imageUri);
 
             StorageReference filePath = mStorage.child("fotos").child(imageUri.getLastPathSegment());
